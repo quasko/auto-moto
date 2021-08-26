@@ -1,43 +1,154 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="page">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="Web site created using create-react-app"
-    />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
-
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
-    <title>React App</title>
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1" /> -->
+    <link href="../src/index.css" type="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <title>Auto-Moto</title>
   </head>
-  <body>
+  <body class="page__body">
+    <header class="page__header header">
+      <div class="header__inner">
+        <div class="header__logo logo">
+          <img class="logo__image" src="./img/logo.png" alt="Логотип компании Auto-Moto" width="55" height="55">
+          <div class="logo__inner">
+            <p class="logo__text">Auto</p>
+            <p class="logo__text">Moto</p>
+          </div>
+        </div>
+        <ul class="header__list">
+          <li class="header__item">
+            <a class="header__link">Автомобили</a>
+          </li>
+          <li class="header__item">
+            <a class="header__link">Контакты</a>
+          </li>
+          <li class="header__item">
+            <a class="header__link">Услуги</a>
+          </li>
+          <li class="header__item">
+            <a class="header__link">Вакансии</a>
+          </li>
+        </ul>
+      </div>
+    </header>
+    <main class="page__main main">
+      <section class="main__slider slider">
+        <img class="slider__image" src='./img/slide-1-desktop@1x.jpg' alt='Фотография автомобиля'>
+
+        <form class="slider__preview preview">
+          <fieldset class="preview__wrapper">
+            <label class="preview__label" for="slide-1">
+              <input class="preview__input visually-hidden" type="radio" name="slider" id="slide-1" checked>
+              <img src="./img/slide-1-desktop@1x.jpg" width="128" height="80">
+            </label>
+
+            <label class="preview__label" for="slide-2">
+              <input class="preview__input visually-hidden" type="radio" name="slider" id="slide-2">
+              <img src="./img/slide-2-desktop@1x.jpg" width="128" height="80">
+            </label>
+
+            <label class="preview__label" for="slide-3">
+              <input class="preview__input visually-hidden" type="radio" name="slider" id="slide-3">
+              <img src="./img/slide-3-desktop@1x.jpg" width="128" height="80">
+            </label>
+          </fieldset>
+        </form>
+      </section>
+      <section class="main__info info">
+        <h1 class="info__header">Марпех 11</h1>
+
+        <ul class="info__list">
+          <li class="info__item info__item--gasoline">бензин</li>
+          <li class="info__item info__item--transmission">механика</li>
+          <li class="info__item info__item--horsepower">100 л.с.</li>
+          <li class="info__item info__item--engine">1.4 л.</li>
+        </ul>
+
+        <div class="info__price-wrapper">
+          <h2 class="info__current-price">2 300 000 ₽</h2>
+          <p class="info__prev-price">2 400 000 ₽</p>
+        </div>
+
+        <a class="info__request">Оставить заявку</a>
+        <a class="info__credit">В кредит от 11 000 ₽</a>
+      </section>
+
+      <section class="main__tabs tabs">
+        <form class="tabs__form">
+          <fieldset class="tabs__inner">
+            <input class="tabs__input visually-hidden" type="radio" name="tabs" id="tab-1" checked />
+            <label class="tabs__label" for="tab-1">Характеристики</label>
+
+            <input class="tabs__input visually-hidden" type="radio" name="tabs" d="tab-2" />
+            <label class="tabs__label" for="tab-2">Отзывы</label>
+
+            <input class="tabs__input visually-hidden" type="radio" name="tabs" d="tab-3" />
+            <label class="tabs__label" for="tab-3">Контакты</label>
+          </fieldset>
+        </form>
+
+        <ul class="tabs__specifications specifications">
+          <li class="specifications__item">
+            <h3 class="specifications__header">Трансмиссия</h3>
+            <p class="specifications__detail">Роботизированная</p>
+          </li>
+          <li class="specifications__item">
+            <h3 class="specifications__header">Мощность двигателя, л.с.</h3>
+            <p class="specifications__detail">249</p>
+          </li>
+          <li class="specifications__item">
+            <h3 class="specifications__header">Тип двигателя</h3>
+            <p class="specifications__detail">Бензиновый</p>
+          </li>
+          <li class="specifications__item">
+            <h3 class="specifications__header">Привод</h3>
+            <p class="specifications__detail">Полный</p>
+          </li>
+          <li class="specifications__item">
+            <h3 class="specifications__header">Объем двигателя, л</h3>
+            <p class="specifications__detail">2.4</p>
+          </li>
+          <li class="specifications__item">
+            <h3 class="specifications__header">Макс. крутящий момент</h3>
+            <p class="specifications__detail">370/4500</p>
+          </li>
+          <li class="specifications__item">
+            <h3 class="specifications__header">Количество цилиндров</h3>
+            <p class="specifications__detail">4</p>
+          </li>
+        </ul>
+      </section>
+    </main>
+
+    <footer class="page__footer footer">
+      <ul class="footer__list">
+        <li class="footer__item">
+          <a class="footer__link">Корпоративным клиентам</a>
+        </li>
+        <li class="footer__item">
+          <a class="footer__link">Клиентам</a>
+        </li>
+        <li class="footer__item">
+          <a class="footer__link">Аренда авто</a>
+        </li>
+        <li class="footer__item">
+          <a class="footer__link">Каршеринг</a>
+        </li>
+        <li class="footer__item">
+          <a class="footer__link">Как продать авто</a>
+        </li>
+        <li class="footer__item">
+          <a class="footer__link">Trade-in</a>
+        </li>
+        <li class="footer__item">
+          <a class="footer__link">Test drive</a>
+        </li>
+      </ul>
+    </footer>
+    
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
-
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
-
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
   </body>
 </html>
