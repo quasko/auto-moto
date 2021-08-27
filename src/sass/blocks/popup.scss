@@ -1,0 +1,133 @@
+.popup {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 698px;
+  height: 415px;
+  margin: 40px auto;
+  background: $background-light-gray;
+}
+
+.popup__header {
+  font-weight: 600;
+  font-size: 25px;
+  line-height: 34px;
+  color: $text-dark-gray;
+  margin: 45px 0;
+  margin-right: 4px;
+}
+
+.popup__form {
+  display: grid;
+  grid-template-columns: 300px 300px;
+  justify-content: center;
+  column-gap: 28px;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.popup__field {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+.popup__text-input {
+  position: relative;
+  width: 300px;
+  height: 50px;
+  background: $white;
+  border: 1px solid $popup-text;
+  box-sizing: border-box;
+  padding: 15px 25px;
+}
+
+.popup__text-input:focus {
+  border: 1px solid $item-focus;
+}
+
+.popup__text-input::before {
+  position: absolute;
+  content: '–';
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 20px;
+  left: 0;
+  color: $branded-red;
+}
+
+.popup__text-input:not(:last-of-type) {
+  margin-bottom: 16px;
+}
+
+.popup__stars {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 20px;
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+
+.popup__stars-header {
+  display: block;
+  padding: 0;
+  margin: 0;
+  margin-top: 10px;
+  margin-right: 8px;
+}
+
+.popup__stars-label {
+  margin-top: 6px;
+}
+
+.popup__comment {
+  width: 300px;
+  height: 118px;
+  font-family: 'Open sans', sans-serif;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 19px;
+  padding: 14px 24px;
+  box-sizing: border-box;
+  resize: none;
+  background: $white;
+  border: 1px solid $popup-comment-border;
+}
+
+.popup__submit {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 19px;
+  color: $white;
+  text-align: center;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin: 0 auto;
+  margin-top: 35px;
+  padding: 16px 17px;
+  background-color: $branded-red;
+  border: none;
+}
+
+.popup__close {
+  position: absolute;
+  content: '';
+  width: 16px;
+  height: 16px;
+  top: 38px;
+  right: 25px;
+  background-image: url('../../img/cross.svg');
+  background-color: inherit;
+  border: none;
+  cursor: pointer;
+}

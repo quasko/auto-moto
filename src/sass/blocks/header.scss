@@ -1,0 +1,38 @@
+.header {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  background-color: $background-light-gray;
+  padding-bottom: 13px;
+}
+
+.header__inner {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 1170px;
+}
+
+.header__list {
+  display: flex;
+  list-style: none;
+  font-family: 'Open Sans', sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 22px;
+  color: $text-dark-gray;
+  margin: 0;
+  padding: 0;
+  margin-top: 29px;
+}
+
+.header__item:not(:last-of-type) {
+  margin-right: 69px;
+}
+
+.header__link {
+  display: block;
+  color: $text-dark-gray;
+  text-decoration: none;
+}

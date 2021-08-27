@@ -1,0 +1,29 @@
+.reviews {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+.reviews__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.reviews__add-review {
+  display: block;
+  position: absolute;
+  right: 0;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 19px;
+  color: $branded-red;
+  text-align: center;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  border: 1px solid $branded-red;
+  box-sizing: border-box;
+  padding: 15px;
+  background-color: inherit;
+}
