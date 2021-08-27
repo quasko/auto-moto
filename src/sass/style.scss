@@ -23,6 +23,7 @@
   justify-content: center;
   width: 100%;
   background-color: #F5F5F9;
+  padding-bottom: 13px;
 }
 
 .header__inner {
@@ -69,8 +70,7 @@
   font-weight: 600;
   font-size: 14px;
   line-height: 19px;
-  margin-top: 2px;
-  margin-left: -2px;
+  margin: 0;
 }
 
 .header__list {
@@ -84,7 +84,7 @@
   color: #48494D;
   margin: 0;
   padding: 0;
-  margin-top: 32px;
+  margin-top: 29px;
 }
 
 .header__item:not(:last-of-type) {
@@ -93,6 +93,8 @@
 
 .header__link {
   display: block;
+  color: #48494D;
+  text-decoration: none;
 }
 
 .page__main {
@@ -100,7 +102,7 @@
   grid-template-columns: 585px 585px;
   grid-template-rows: auto auto;
   justify-content: center;
-  margin-top: 74px;
+  margin-top: 72px;
   margin-bottom: 110px;
 }
 
@@ -124,12 +126,12 @@
 .preview__wrapper::before {
   position: absolute;
   content: '';
-  width: 48px;
-  height: 48px;
+  width: 50px;
+  height: 50px;
   left: -10px;
   top: 13px;
   transform: rotate(180deg);
-  background-image: url('./img/arrow.svg');
+  background-image: url('../img/arrow.svg');
   background-repeat: no-repeat;
   border: 1px solid #D7D9DF;
   border-radius: 50%;
@@ -144,7 +146,7 @@
   height: 48px;
   right: -10px;
   top: 15px;
-  background-image: url('./img/arrow.svg');
+  background-image: url('../img/arrow.svg');
   background-repeat: no-repeat;
   border: 1px solid #D7D9DF;
   border-radius: 50%;
@@ -181,6 +183,7 @@
   margin: 0;
   padding: 0;
   margin-bottom: 61px;
+  margin-top: 2px;
 }
 
 .info__list {
@@ -220,7 +223,7 @@
   height: 23px;
   top: -28px;
   left: 16px;
-  background-image: url('./img/gasoline.svg');
+  background-image: url('../img/gasoline.svg');
   background-repeat: no-repeat;
 }
 
@@ -229,9 +232,9 @@
   content: '';
   width: 26px;
   height: 24px;
-  top: -29px;
+  top: -30px;
   left: 24px;
-  background-image: url('./img/transmission.svg');
+  background-image: url('../img/transmission.svg');
   background-repeat: no-repeat;
 }
 
@@ -242,7 +245,7 @@
   height: 21px;
   top: -29px;
   left: 12px;
-  background-image: url('./img/horsepower.svg');
+  background-image: url('../img/horsepower.svg');
   background-repeat: no-repeat;
 }
 
@@ -253,7 +256,7 @@
   height: 25px;
   top: -29px;
   left: 3px;
-  background-image: url('./img/engine.svg');
+  background-image: url('../img/engine.svg');
   background-repeat: no-repeat;
 }
 
@@ -305,7 +308,7 @@
   text-align: center;
   letter-spacing: 0.12em;
   padding: 18px;
-  padding-bottom: 17px;
+  padding-bottom: 16px;
   padding-right: 15px;
   margin-left: -3px;
   margin-bottom: 15px;
@@ -313,6 +316,7 @@
   text-transform: uppercase;
   color: #FFFFFF;
   background-color: #D12136;
+  text-decoration: none;
 }
 
 .info__credit {
@@ -330,6 +334,7 @@
   text-transform: uppercase;
   border: 1px solid #D12136;
   color: #D12136;
+  text-decoration: none;
 }
 
 .tabs__inner {
@@ -362,7 +367,7 @@
   background-color: #D12136;;
   color: white;
   border: none;
-  padding-top: 12px;
+  padding-top: 13px;
   padding-bottom: 9px;
 }
 
@@ -371,15 +376,21 @@
 }
 
 .specifications {
+  grid-column-start: 1;
+  grid-column-end: 2;
   display: flex;
   flex-direction: column;
   list-style: none;
   margin: 0;
   padding: 0;
   width: 565px;
-  margin-top: 29px;
+  margin-top: 30px;
   padding-bottom: 8px;
-  padding-left: 16px;
+}
+
+.specifications__list {
+  margin: 0;
+  padding: 0;
 }
 
 .specifications__item {
@@ -450,6 +461,8 @@
   display: block;
   margin: 0;
   padding: 0;
+  color: #48494D;
+  text-decoration: none;
 }
 
 .main__reviews {
@@ -801,7 +814,7 @@
   height: 16px;
   top: 38px;
   right: 25px;
-  background-image: url('./img/cross.svg');
+  background-image: url('../img/cross.svg');
   background-color: inherit;
   border: none;
   cursor: pointer;
