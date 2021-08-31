@@ -22,6 +22,11 @@
   line-height: 27px;
   color: $text-dark-gray;
   cursor: pointer;
+
+  &:nth-of-type(2) {
+    border-left: none;
+    border-right: none;
+  }
 }
 
 .tabs__input:checked + .tabs__label {
@@ -30,8 +35,8 @@
   border: none;
   padding-top: 13px;
   padding-bottom: 9px;
-}
 
-.tabs__label + .tabs__label {
-  margin: -1px 0 -1px 0px;
+  &:hover {
+    background-color: $button-hover;
+  }
 }

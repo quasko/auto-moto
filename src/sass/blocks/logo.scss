@@ -1,8 +1,6 @@
 .logo {
   display: flex;
   flex-wrap: wrap;
-  font-family: 'Open Sans', sans-serif;
-  font-style: normal;
   letter-spacing: 0.13em;
   color: $text-dark-gray;
 }
@@ -22,18 +20,18 @@
   padding: 0;
   margin: 0;
   text-transform: uppercase;
-}
 
-.logo__text:first-of-type {
-  font-weight: bold;
-  font-size: 18px;
-  line-height: 26px;
-  margin-top: 20px;
-}
-
-.logo__text:last-of-type {
-  font-weight: 600;
-  font-size: 14px;
-  line-height: 19px;
-  margin: 0;
+  &:first-of-type {
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 26px;
+    margin-top: 20px;
+  }
+  
+  &:last-of-type {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 19px;
+    margin: 0;
+  }
 }

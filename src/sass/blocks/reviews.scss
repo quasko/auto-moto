@@ -15,15 +15,22 @@
   display: block;
   position: absolute;
   right: 0;
+  top: -1px;
   font-weight: 600;
   font-size: 14px;
-  line-height: 19px;
+  line-height: 16px;
   color: $branded-red;
   text-align: center;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   border: 1px solid $branded-red;
   box-sizing: border-box;
-  padding: 15px;
+  padding: 16px;
   background-color: inherit;
+  cursor: pointer;
+
+  &:hover {
+    color: $white;
+    background-color: $branded-red;
+  }
 }

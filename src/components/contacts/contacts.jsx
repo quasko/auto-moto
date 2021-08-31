@@ -1,5 +1,7 @@
 import React from 'react';
 
+import MapContainer from '../map-container/map-container';
+
 function Contacts() {
   return (
     <section className="main__contacts contacts">
@@ -15,15 +17,17 @@ function Contacts() {
         </li>
         <li className="contacts__item">
           <h3 className="contacts__header">Телефон</h3>
-          <p className="contacts__text">8 (800) 333-55-99</p>
+          <a className="contacts__text" href="tel:+78003335599">8 (800) 333-55-99</a>
         </li>
         <li className="contacts__item">
           <h3 className="contacts__header">E-mail</h3>
-          <p className="contacts__text">info@avto-moto.ru</p>
+          <a className="contacts__text" href="mailto:info@avto-moto.ru">info@avto-moto.ru</a>
         </li>
       </ul>
 
-      <img className="contacts__map" src="./img/map.jpg" alt="Карта с расположением нашего магазина" width="431" height="271" />
+      <div className="contacts__map">
+        <MapContainer />
+      </div>
     </section>
   )
 }

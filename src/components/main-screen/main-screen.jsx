@@ -23,6 +23,6 @@ function MainScreen() {
       <Footer />
     </React.Fragment>
   );
-};
+}
 
 export default MainScreen;

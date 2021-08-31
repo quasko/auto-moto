@@ -1,6 +1,28 @@
 .slider {
-  margin-top: 18px;
+  position: relative;
+  margin-top: 16px;
   margin-left: -6px;
+
+  &::before {
+    position: absolute;
+    content: 'new model';
+    left: 0;
+    top: 0;
+    width: 122px;
+    font-weight: 600;
+    font-size: 10px;
+    line-height: 14px;
+    text-align: center;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    padding: 10px;
+    color: #FFFFFF;
+    background-color: $branded-red;
+  }
+}
+
+.slider__preview {
+  position: relative;
 }
 
 .slider__wrapper {
@@ -10,50 +32,47 @@
   border: none;
   margin: 0;
   padding: 0;
-  margin-top: 35px;
+  margin-top: 32px;
   margin-left: 10px;
-  margin-bottom: 85px;
+  margin-bottom: 82px;
 }
 
-.slider__wrapper::before {
+.slider__button {
   position: absolute;
   content: '';
-  width: 50px;
-  height: 50px;
-  left: -10px;
-  top: 13px;
-  transform: rotate(180deg);
+  width: 52px;
+  height: 52px;
+  top: 14px;
+  background-color: inherit;
   background-image: url('../../img/arrow.svg');
   background-repeat: no-repeat;
   border: 1px solid $border-gray;
   border-radius: 50%;
   background-position: 50% 50%;
   cursor: pointer;
-}
 
-.slider__wrapper::after {
-  position: absolute;
-  content: '';
-  width: 48px;
-  height: 48px;
-  right: -10px;
-  top: 15px;
-  background-image: url('../../img/arrow.svg');
-  background-repeat: no-repeat;
-  border: 1px solid $border-gray;
-  border-radius: 50%;
-  background-position: 50% 50%;
-  cursor: pointer;
+  &--left {
+    left: 1px;
+    transform: rotate(180deg);
+  }
+
+  &--right {
+    right: -9px;
+  }
+
+  &--disabled {
+    opacity: 50%; 
+  }
 }
 
 .slider__label {
   cursor: pointer;
-}
 
-.slider__label:checked {
-  margin-top: 50px
-}
-
-.slider__label:nth-of-type(2) {
-  margin: 0 25px;
+  &:checked {
+    margin-top: 50px
+  }
+  
+  &:nth-of-type(2) {
+    margin: 0 25px;
+  }
 }

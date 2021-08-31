@@ -1,12 +1,12 @@
-import React from 'react';
-import { TabValues, defaultTab } from '../../utils/const';
+import React, { useState } from 'react';
+import { TabValues, DEFAULT_TAB } from '../../utils/const';
 
 import Contacts from '../contacts/contacts';
 import Reviews from '../reviews/reviews';
 import Specifications from '../specifications/specifications';
 
 function Tabs() {
-  const [activeTab, setActiveTab] = React.useState(defaultTab);
+  const [activeTab, setActiveTab] = useState(DEFAULT_TAB);
 
   const tabsArray = Object.values(TabValues);
 
@@ -30,6 +30,8 @@ function Tabs() {
   return (
     <React.Fragment>
       <section className="main__tabs tabs">
+        <h2 className="tabs__header visually-hidden">Меню товара</h2>
+
         <form className="tabs__form">
           <fieldset className="tabs__inner" onChange={onChangeHandler}>
             {tabsArray.map((item, id) => (
@@ -47,6 +49,6 @@ function Tabs() {
       {activeTabHandler()}
     </React.Fragment>
   )
-};
+}
 
 export default Tabs;
