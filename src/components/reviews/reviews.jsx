@@ -10,12 +10,12 @@ function Reviews() {
     const review = localStorage.getItem('comment');
     const isPublished = reviews.includes(review);
 
-    if (!isPublished && review) {
+    if (!isPublished) {
       reviews.push(JSON.parse(review));
     }
   }
 
-  const onClickPopupHandler = (value) => {
+  const onClickPopup = (value) => {
     setAddReview(value)
   }
 
@@ -28,12 +28,10 @@ function Reviews() {
           ))}
         </ul>
 
-        <button className="reviews__add-review" onClick={() => onClickPopupHandler(true)}>Оставить отзыв</button>
+        <button className="reviews__add-review" onClick={() => onClickPopup(true)}>Оставить отзыв</button>
       </section>
 
-      {addReview && <Popup closePopup={onClickPopupHandler} />}
-
-      {addNewReviews()}
+      {addReview && <Popup closePopup={onClickPopup} addNewReviews={addNewReviews} />}
     </React.Fragment>
   )
 }

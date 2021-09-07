@@ -1,10 +1,10 @@
-import React, { useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import PropTypes from 'prop-types';
 
 import useOutsideClick from '../../utils/hooks/use-outside-click';
 import { makeArray } from '../../utils/common';
 
-function Popup({closePopup}) {
+function Popup({closePopup, addNewReviews}) {
   const [hoverStar, setHoverStar] = useState(0);
   const [starRate, setStarRate] = useState(0);
   const stars = makeArray();
@@ -15,13 +15,25 @@ function Popup({closePopup}) {
   const disadvantagesRef = useRef();
   const commentRef = useRef();
 
-  const onCloseClickHandler = (evt) => {
+  useEffect(() => {
+    const closeByEsc = (evt) => {
+      if (evt.keyCode === 27) {
+        closePopup(false);
+      }
+    }
+
+    window.addEventListener('keydown', closeByEsc)
+
+  return () => window.removeEventListener('keydown', closeByEsc)
+  }, []);
+
+  const onCloseClick = (evt) => {
     evt.preventDefault();
 
     closePopup(false);
   };
 
-  const onSubmitHandler = (evt) => {
+  const onPopupSubmit = (evt) => {
     evt.preventDefault();
   
     const formData = {
@@ -34,6 +46,7 @@ function Popup({closePopup}) {
 
     localStorage.setItem('comment', JSON.stringify(formData));
 
+    addNewReviews();
     closePopup(false);
   };
 
@@ -41,13 +54,13 @@ function Popup({closePopup}) {
     closePopup(false);
   });
 
-  const onMouseOverStarHandler = (evt) => {
+  const onStarMouseOver = (evt) => {
     evt.preventDefault();
 
     setHoverStar(evt.target.dataset.id);
   }
 
-  const onMouseOutStarHandler = (evt) => {
+  const onStarMouseOut = (evt) => {
     evt.preventDefault();
 
     setHoverStar(0);
@@ -65,14 +78,14 @@ function Popup({closePopup}) {
         <h2 className="popup__header">Оставить отзыв</h2>
         <form className="popup__form">
           <fieldset className="popup__field">
-            <input ref={nameRef} className="popup__text-input" type="text" placeholder="Имя" required />
-            <label className="popup__text-label"></label>
+            <input ref={nameRef} className="popup__text-input" type="text" placeholder="Имя" id="popup_name" required />
+            <label className="popup__text-label visually-hidden" htmlFor="popup_name">Поле имени</label>
 
-            <input ref={dignityRef} className="popup__text-input" type="text" placeholder="Достоинства" />
-            <label className="popup__text-label"></label>
+            <input ref={dignityRef} className="popup__text-input" type="text" placeholder="Достоинства" id="popup_dignity" />
+            <label className="popup__text-label visually-hidden" htmlFor="popup_dignity">Поле достоинств</label>
 
-            <input ref={disadvantagesRef} className="popup__text-input" type="text" placeholder="Недостатки" />
-            <label className="popup__text-label"></label>
+            <input ref={disadvantagesRef} className="popup__text-input" type="text" placeholder="Недостатки" id="popup_disadvantages" />
+            <label className="popup__text-label visually-hidden" htmlFor="popup_disadvantages">Поле недостатков</label>
           </fieldset>
           <fieldset className="popup__field">
             <fieldset className="popup__stars">
@@ -92,9 +105,9 @@ function Popup({closePopup}) {
                   htmlFor={`star-${index}`} 
                   data-id={item}
                   onClick={onStarClickHandler} 
-                  onMouseOver={onMouseOverStarHandler}
-                  onMouseOut={onMouseOutStarHandler}
-                  ></label>
+                  onMouseOver={onStarMouseOver}
+                  onMouseOut={onStarMouseOut}
+                  >Рейтинг</label>
                 </React.Fragment>
               ))}
             </fieldset>
@@ -102,8 +115,8 @@ function Popup({closePopup}) {
             <textarea ref={commentRef} className="popup__comment" placeholder="Комментарий" required></textarea>
           </fieldset>
 
-          <button className="popup__submit" onClick={onSubmitHandler}>Оставить отзыв</button>
-          <button className="popup__close" onClick={onCloseClickHandler}></button>
+          <button className="popup__submit" onClick={onPopupSubmit}>Оставить отзыв</button>
+          <button className="popup__close" onClick={onCloseClick}></button>
         </form>
       </div>
     </div>

@@ -6,7 +6,7 @@
   padding: 0;
 }
 
-.tabs__label {
+.tabs__item {
   flex-grow: 3;
   display: block;
   width: 195px;
@@ -27,16 +27,16 @@
     border-left: none;
     border-right: none;
   }
-}
 
-.tabs__input:checked + .tabs__label {
-  background-color: $branded-red;
-  color: $white;
-  border: none;
-  padding-top: 13px;
-  padding-bottom: 9px;
-
-  &:hover {
-    background-color: $button-hover;
-  }
+  &--checked {
+    background-color: $branded-red;
+    color: $white;
+    border: none;
+    padding-top: 13px;
+    padding-bottom: 9px;
+  
+    &:hover {
+      background-color: $button-hover;
+    }
+  }  
 }
